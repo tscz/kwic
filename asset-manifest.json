@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/kwic/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/kwic/static/js/main.90943077.chunk.js",
+    "main.js.map": "/kwic/static/js/main.90943077.chunk.js.map",
+    "runtime-main.js": "/kwic/static/js/runtime-main.2d264af7.js",
+    "runtime-main.js.map": "/kwic/static/js/runtime-main.2d264af7.js.map",
+    "static/js/2.954ca677.chunk.js": "/kwic/static/js/2.954ca677.chunk.js",
+    "static/js/2.954ca677.chunk.js.map": "/kwic/static/js/2.954ca677.chunk.js.map",
+    "static/js/3.88ab2cc1.chunk.js": "/kwic/static/js/3.88ab2cc1.chunk.js",
+    "static/js/3.88ab2cc1.chunk.js.map": "/kwic/static/js/3.88ab2cc1.chunk.js.map",
+    "index.html": "/kwic/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/kwic/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.954ca677.chunk.js.LICENSE.txt": "/kwic/static/js/2.954ca677.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/kwic/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d264af7.js",
+    "static/js/2.954ca677.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.90943077.chunk.js"
+  ]
+}
