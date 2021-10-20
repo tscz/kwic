@@ -1,25 +1,46 @@
-export function computeKwicFor(input: string): string[] {
-  const lines = input.split(/\r?\n/);
+/**
+ * Compute the Key word in Context (KWIC) index for a text block.
+ *
+ * @see https://en.wikipedia.org/wiki/Key_Word_in_Context
+ *
+ * @param text the text block containing sentences
+ * @returns the KWIC index, i.e. an alphabetically ordered list of permutated sentences derived from the input
+ */
+export function computeKwicFor(text: string): string[] {
+  const lines = text.split(/\r?\n/);
 
-  var output: string[] = [];
+  let kwic: string[] = [];
 
   lines.forEach((line) => {
     line = line.trim();
 
-    if (line.length === 0) return;
+    if (isEmpty(line)) return;
 
-    let startIndex = 0;
+    kwic.push(line);
 
-    while (startIndex !== -1) {
-      startIndex = line.indexOf(" ", startIndex + 1);
+    if (isOnlyOneWord(line)) {
+      return;
+    }
 
-      const sentence =
-        line.substring(startIndex, line.length) +
-        " " +
-        line.substring(0, startIndex);
-      output.push(sentence.trim());
+    let splitIndex = 0;
+    while ((splitIndex = line.indexOf(" ", splitIndex + 1)) !== -1) {
+      const [firstPart, secondPart] = [
+        line.substring(0, splitIndex),
+        line.substring(splitIndex + 1, line.length),
+      ];
+
+      const permutation = `${secondPart} ${firstPart}`;
+      kwic.push(permutation);
     }
   });
 
-  return output.sort((a, b) => a.localeCompare(b));
+  return kwic.sort((a, b) => a.localeCompare(b));
+
+  function isOnlyOneWord(line: string) {
+    return line.indexOf(" ") === -1;
+  }
+
+  function isEmpty(line: string) {
+    return line.length === 0;
+  }
 }
