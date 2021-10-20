@@ -5,7 +5,7 @@ import "./App.css";
 import { computeKwicFor } from "./kwic";
 
 function App() {
-  const [input, setInput] = useState("Please enter text!");
+  const [input, setInput] = useState("");
 
   return (
     <Container>

@@ -4,10 +4,22 @@ export function computeKwicFor(input: string): string[] {
   var output: string[] = [];
 
   lines.forEach((line) => {
-    const words = line.split(" ");
+    line = line.trim();
 
-    words.forEach((word) => output.push(word));
+    if (line.length === 0) return;
+
+    let startIndex = 0;
+
+    while (startIndex !== -1) {
+      startIndex = line.indexOf(" ", startIndex + 1);
+
+      const sentence =
+        line.substring(startIndex, line.length) +
+        " " +
+        line.substring(0, startIndex);
+      output.push(sentence.trim());
+    }
   });
 
-  return output;
+  return output.sort((a, b) => a.localeCompare(b));
 }
